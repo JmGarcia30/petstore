@@ -1,0 +1,5 @@
+com\petstore\model\Pet.class
+com\petstore\config\SeedData.class
+com\petstore\repository\PetRepository.class
+com\petstore\service\PetService.class
+com\petstore\PetstoreApplication.class
