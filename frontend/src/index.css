@@ -6,7 +6,7 @@
 
 :root {
 	color: #1f2937;
-	background-color: #f6f3ef;
+	background-color: #f9fafb;
 }
 
 * {
@@ -17,6 +17,62 @@ html,
 body,
 #root {
 	min-height: 100%;
+}
+
+/* Global Styles */
+body {
+	font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+	letter-spacing: -0.02em;
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg, #3b82f6 0%, #a855f7 100%);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #2563eb 0%, #9333ea 100%);
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.animate-spin {
+	animation: spin 1s linear infinite;
+}
+
+/* Smooth transitions */
+button,
+a {
+	transition: all 0.3s ease;
 }
 
 body {

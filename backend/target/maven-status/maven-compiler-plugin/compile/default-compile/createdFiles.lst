@@ -1,5 +1,13 @@
+com\petstore\model\Category.class
 com\petstore\model\Pet.class
+com\petstore\dto\PetDto.class
+com\petstore\config\CorsConfig.class
+com\petstore\controller\PetController.class
+com\petstore\PetstoreApplication.class
+com\petstore\controller\CategoryController.class
+com\petstore\service\CategoryService.class
+com\petstore\repository\CategoryRepository.class
 com\petstore\config\SeedData.class
+com\petstore\dto\CategoryDto.class
 com\petstore\repository\PetRepository.class
 com\petstore\service\PetService.class
-com\petstore\PetstoreApplication.class
