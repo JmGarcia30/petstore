@@ -4,10 +4,10 @@ import { ProductCard } from '../components/ProductCard';
 import { CategoryFilter } from '../components/CategoryFilter';
 import { useCart } from '../context/CartContext';
 
-export const CatalogPage = () => {
+export const CatalogPage = ({ initialCategory = null }) => {
   const [categories, setCategories] = useState([]);
   const [pets, setPets] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -58,16 +58,16 @@ export const CatalogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16">
+    <div className="min-h-screen bg-[#FDFBF7] pt-16">
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-12">
           <div className="text-center mb-8">
-            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-              🐾 Petstore Catalog
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+              Petstore Catalog
             </h1>
-            <p className="text-xl text-gray-600">Discover amazing pets ready for their forever homes</p>
+            <p className="text-lg text-gray-600">Browse our curated selection of quality pet products</p>
           </div>
 
           {/* Search Bar */}
@@ -110,9 +110,9 @@ export const CatalogPage = () => {
             ) : pets && pets.length > 0 ? (
               <>
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-gray-900">
-                    {selectedCategory ? `🐾 ${selectedCategory}` : '✨ All Products'}{' '}
-                    <span className="text-gray-500 text-2xl">({pets.length})</span>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    {selectedCategory ? `${selectedCategory}` : 'All Products'}{' '}
+                    <span className="text-gray-500 text-base">({pets.length})</span>
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -127,7 +127,6 @@ export const CatalogPage = () => {
               </>
             ) : (
               <div className="bg-white rounded-xl shadow-lg p-12 text-center">
-                <p className="text-2xl text-gray-600 mb-4">🔍</p>
                 <p className="text-xl text-gray-600 mb-2">
                   {searchTerm ? 'No pets found matching your search' : 'No products available'}
                 </p>

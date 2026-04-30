@@ -5,7 +5,7 @@ export const CartPage = ({ onBackClick }) => {
   const { cartItems, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FDFBF7]">
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <button
@@ -24,7 +24,7 @@ export const CartPage = ({ onBackClick }) => {
 
         {cartItems.length === 0 ? (
           <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <div className="text-6xl mb-4">🛒</div>
+            <div className="text-6xl mb-4"> </div>
             <p className="text-xl text-gray-600 mb-4">Your cart is empty</p>
             <button
               onClick={onBackClick}
@@ -42,12 +42,9 @@ export const CartPage = ({ onBackClick }) => {
                   {cartItems.map((item) => (
                     <div key={item.id} className="p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
                       <div className="flex items-center space-x-4 flex-1">
-                        {/* Item Icon */}
-                        <div className="text-4xl">
-                          {item.type === 'Dog' && '🐕'}
-                          {item.type === 'Cat' && '🐈'}
-                          {item.type === 'Bird' && '🐦'}
-                          {item.type === 'Fish' && '🐠'}
+                        {/* Item Thumbnail */}
+                        <div className="w-16 h-16 bg-gray-100 rounded-md flex items-center justify-center text-gray-600 font-semibold">
+                          {item.name ? item.name.charAt(0).toUpperCase() : 'P'}
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg font-semibold text-gray-900">{item.name}</h3>

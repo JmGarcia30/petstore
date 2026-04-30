@@ -3,10 +3,7 @@ import React from 'react';
 export const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg p-6 sticky top-24">
-      <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-        <span className="text-xl mr-2">🏷️</span>
-        Categories
-      </h3>
+      <h3 className="text-lg font-bold text-gray-900 mb-6">Categories</h3>
       
       <div className="space-y-2">
         {/* All Products Button */}
@@ -14,11 +11,11 @@ export const CategoryFilter = ({ categories, selectedCategory, onCategoryChange 
           onClick={() => onCategoryChange(null)}
           className={`w-full px-4 py-3 rounded-lg font-semibold transition-all text-left ${
             selectedCategory === null
-              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-              : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              ? 'bg-green-600 text-white shadow-lg'
+              : 'bg-[#FDFBF7] text-gray-800 hover:bg-green-50'
           }`}
         >
-          ✨ All Products
+          All Products
         </button>
 
         {/* Category Buttons */}
@@ -28,29 +25,20 @@ export const CategoryFilter = ({ categories, selectedCategory, onCategoryChange 
             onClick={() => onCategoryChange(category.name)}
             className={`w-full px-4 py-3 rounded-lg font-semibold transition-all text-left ${
               selectedCategory === category.name
-                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                ? 'bg-green-600 text-white shadow-lg'
+                : 'bg-[#FDFBF7] text-gray-800 hover:bg-green-50'
             }`}
           >
-            <span className="mr-2">
-              {category.name === 'Dogs' && '🐕'}
-              {category.name === 'Cats' && '🐈'}
-              {category.name === 'Birds' && '🐦'}
-              {category.name === 'Fishes' && '🐠'}
-            </span>
             {category.name}
           </button>
         ))}
       </div>
 
       {/* Category Description */}
-      {selectedCategory && (
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+      {selectedCategory && typeof selectedCategory === 'string' && (
+        <div className="mt-6 p-4 bg-[#FDFBF7] rounded-lg border border-gray-200">
           <p className="text-sm text-gray-700">
-            {selectedCategory === 'Dogs' && '🐕 Loyal and friendly companions!'}
-            {selectedCategory === 'Cats' && '🐈 Independent and affectionate friends!'}
-            {selectedCategory === 'Birds' && '🐦 Colorful and musical pets!'}
-            {selectedCategory === 'Fishes' && '🐠 Peaceful aquatic animals!'}
+            Explore our selection of {selectedCategory.toLowerCase()} pets.
           </p>
         </div>
       )}
