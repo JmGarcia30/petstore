@@ -38,7 +38,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Standard gray color */
 ::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
@@ -49,12 +49,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: linear-gradient(180deg, #3b82f6 0%, #a855f7 100%);
+	background: #cbd5e1;
 	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(180deg, #2563eb 0%, #9333ea 100%);
+	background: #94a3b8;
 }
 
 /* Loading spinner animation */
@@ -121,4 +121,50 @@ body {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+/* Page Transition Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animate-fadeIn {
+	animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slideInRight {
+	animation: slideInRight 0.5s ease-out;
+}
+
+.animate-slideInLeft {
+	animation: slideInLeft 0.5s ease-out;
 }
