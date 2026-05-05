@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { Logo } from './Logo';
 
 export const Header = ({ user, onCartClick, onLogoClick, onLoginClick, onSignUpClick, onLogout, onAdminClick }) => {
   const { getTotalItems } = useCart();
@@ -15,8 +16,9 @@ export const Header = ({ user, onCartClick, onLogoClick, onLoginClick, onSignUpC
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <button onClick={onLogoClick} className="text-2xl font-extrabold text-green-800 hover:opacity-90 transition-opacity">
-            Petstore
+          <button onClick={onLogoClick} className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
+            <Logo width={40} height={40} />
+            <span className="text-2xl font-extrabold text-green-800">Petstore</span>
           </button>
 
           {/* Right Section */}
