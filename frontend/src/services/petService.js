@@ -2,7 +2,7 @@
 const isDevelopment = import.meta.env.DEV;
 const API_BASE = isDevelopment 
   ? 'http://localhost:8080/api/v1'
-  : 'https://petstore-backend.onrender.com/api/v1'; // Update with your Render backend URL
+  : 'https://petstore-l0ok.onrender.com/api/v1'; // Update with your Render backend URL
 
 /**
  * Fetch all categories
