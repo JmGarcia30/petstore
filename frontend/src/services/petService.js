@@ -1,4 +1,8 @@
-const API_BASE = 'http://localhost:8080/api/v1';
+// Dynamically set API base URL based on environment
+const isDevelopment = import.meta.env.DEV;
+const API_BASE = isDevelopment 
+  ? 'http://localhost:8080/api/v1'
+  : 'https://petstore-backend.onrender.com/api/v1'; // Update with your Render backend URL
 
 /**
  * Fetch all categories
