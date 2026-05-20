@@ -24,7 +24,7 @@ services:
         value: https://petstore-frontend.onrender.com
 
   - type: web
-    name: petstore-frontend
+    name: petstore-ui
     env: node
     rootDir: frontend
     buildCommand: npm ci && npm run build && npm install -g serve
