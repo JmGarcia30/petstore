@@ -7,9 +7,7 @@ services:
     healthCheckPath: /api/v1/pets?page=0&pageSize=5
     envVars:
       - key: SPRING_DATASOURCE_URL
-        fromDatabase:
-          name: petstore-postgres
-          property: jdbcConnectionString
+        value: jdbc:postgresql://dpg-d86tcq57vvec73aln02g-a:5432/petstore_ousu
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
           name: petstore-postgres
@@ -29,7 +27,7 @@ services:
     name: petstore-frontend
     env: node
     rootDir: frontend
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npx vite build
     startCommand: npx serve -s dist -l 3000
     envVars:
       - key: VITE_API_BASE_URL
