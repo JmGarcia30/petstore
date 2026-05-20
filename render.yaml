@@ -6,10 +6,20 @@ services:
     plan: free
     healthCheckPath: /api/v1/pets?page=0&pageSize=5
     envVars:
-      - key: SPRING_DATASOURCE_URL
+      - key: DB_HOST
         fromDatabase:
           name: petstore-postgres
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: petstore-postgres
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: petstore-postgres
+          property: database
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://$DB_HOST:$DB_PORT/$DB_NAME
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
           name: petstore-postgres
